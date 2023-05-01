@@ -5,6 +5,17 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   devise_scope :user do
-    root to: "devise/sessions#new"
+    authenticated :user do
+      root to: 'categories#index', as: :authenticated_root
+    end
+    unauthenticated do
+      root to: 'users#index', as: :unauthenticated_root
+    end
+  end
+
+  resources :categories, only: %i[index new create] do
+    resources :items, only: %i[index new create] do
+      resources :item_categories, only: %i[create]
+    end
   end
 end
