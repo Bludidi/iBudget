@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- * {
+* {
   box-sizing: border-box;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -30,7 +30,7 @@ html {
 /* Home page */
 
 .i-logo {
-  color: #ff0000;
+  color: #f00;
 }
 
 .logo {
@@ -66,8 +66,8 @@ html {
   color: #fff;
 }
 
-/* 
-  End of Home page 
+/*
+  End of Home page
   Login Page begins
 */
 
