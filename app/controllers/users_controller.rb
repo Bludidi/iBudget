@@ -2,11 +2,11 @@ class UsersController < ApplicationController
   # skip_before_action :authenticate_user!
 
   # GET /users or /users.json
-  def index
+  def home
     if signed_in?
       redirect_to_categories_path
     else
-      render :index
+      render :home
     end
   end
 
