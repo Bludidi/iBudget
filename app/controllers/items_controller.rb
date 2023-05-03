@@ -1,16 +1,17 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: %i[show edit update destroy]
+  before_action :set_user
 
   # GET /items or /items.json
   def index
-    @items = Item.all
+    @categories = Category.find_by(id: params[:category_id])
+    # @category = @categories.find(params[:category_id])
+    @items = ItemCategory.includes(:item).where(category: @categories).order(created_at: :desc)
   end
-
-  # GET /items/1 or /items/1.json
-  def show; end
 
   # GET /items/new
   def new
+    @categories = @user.categories
+    @category = @categories.find(params[:category_id])
     @item = Item.new
   end
 
@@ -19,17 +20,15 @@ class ItemsController < ApplicationController
 
   # POST /items or /items.json
   def create
-    @item = Item.new(item_params)
+    @category = Category.find(params[:category_id])
+    @item = @user.items.new(item_params)
 
-    respond_to do |format|
-      if @item.save
-        format.html { redirect_to item_url(@item), notice: 'Item was successfully created.' }
-        format.json { render :show, status: :created, location: @item }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
-      end
-    end
+    return unless @item.save
+
+    @item_categories = ItemCategory.new(category_id: @category.id, item_id: @item.id)
+    return unless @item_categories.save
+
+    redirect_to item_categories_path(@category)
   end
 
   # PATCH/PUT /items/1 or /items/1.json
@@ -58,12 +57,12 @@ class ItemsController < ApplicationController
   private
 
   # Use callbacks to share common setup or constraints between actions.
-  def set_item
-    @item = Item.find(params[:id])
+  def set_user
+    @user = current_user
   end
 
   # Only allow a list of trusted parameters through.
   def item_params
-    params.fetch(:item, {})
+    params.require(:item).permit(:name, :amount)
   end
 end
