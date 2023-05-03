@@ -1,13 +1,18 @@
-<p style="color: green"><%= notice %></p>
 
-<h1>Items</h1>
-
-<div id="items">
-  <% @items.each do |item| %>
-    <%= render item %>
+<h1>Transactions</h1>
+<div>
+  <div>
+    <div>Total Amount: $<%= @total %></div>
+  </div>
+  <div id="items">
+    <% @items.each do |item| %>
+    <%#= item.name %>
     <p>
-      <%= link_to "Show this item", item %>
+      <%= item.item.name %>: $<%= item.item.amount %>
     </p>
+  </div>
+    
   <% end %>
 </div>
+
 

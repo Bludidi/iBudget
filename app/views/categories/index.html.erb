@@ -6,7 +6,7 @@
   <% @categories.each do |category| %>
     <%= render category %>
     <div>
-      <%= link_to category.name, category_items_path(@categories) %>
+      <%= link_to category.name, category_items_path(category.id) %>
     </div>
     <img src="<%= category.icon %>", alt="shopping_image">
   <% end %>
