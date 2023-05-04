@@ -5,13 +5,13 @@
   <h2 class="nav-head">TRANSACTIONS</h2>
 </div>
 
-<div>
-  <div><%= @categories.name.upcase %>  TOTAL AMOUNT: $<%= @total %></div>
-</div>
+
+  <div class="total-div"><%= @categories.name.upcase %>  TOTAL AMOUNT: <span class="total">$<%= @total %>0</span></div>
+
 
 <% @items.each do |item| %>
-<div id="items">
-  <p><%= item.item.name %>: $<%= item.item.amount %></p>
+<div class="items">
+  <p><%= item.item.name %>:<span class="total">$<%= item.item.amount %>0<span/></p>
 </div>
     <% end %>
 </div>
