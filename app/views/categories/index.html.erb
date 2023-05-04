@@ -2,7 +2,11 @@
 
 <div class="nav category-head">
   <h2 class="nav-head category-head">CATEGORIES</h2>
-</div>
+  <%# <div class="actions login-link"> %>
+    <%# if user_signed_in? %>
+      <%#= link_to "LOGOUT", destroy_user_session_path(), :method => :delete, class: 'login-link' %>
+    <%# end %>
+</div> 
 
 <div class="categories-div">
   <% @categories.each do |category| %>

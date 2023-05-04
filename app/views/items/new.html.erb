@@ -6,6 +6,7 @@
 </div>
 
 <%= form_with model: @item, url: category_items_path do |f| %>
+  <p></p><%= @category.name%> category:</p>
 <div>
   <%= f.text_field :name, placeholder: 'Item name', class: 'input' %>
 </div>
