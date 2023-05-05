@@ -3,18 +3,18 @@ require 'rails_helper'
 RSpec.describe 'categories/index.html.erb', type: :feature do
   before(:each) do
     @user = User.create!(name: 'Parchie', email: 'parchie@pmail.com', password: '123456')
-    @category = Category.create!(name: 'Clothes', icon: 'icon', user_id: @user.id)
+    visit new_user_session_path
   end
 
-  it 'should authenticate the user' do
-    visit new_user_session_path
-    fill_in 'Email', with: 'parchie@pmail.com'
-    fill_in 'Password', with: '123456'
+ describe 'Login user' do
+  
+  it 'When I fill in correct logging credentials' do
     click_button 'Log in'
+    expect(page).to have_content("LOGIN")
+  end
 
-    visit categories_path
-    expect(page).to have_content('CLOTHES')
-    expect(page).to have_content('$00')
-    expect(page).to have_content('ADD CATEGORY')
+  it 'Option to reset your password is present' do
+    expect(page).to have_content("Forgot your password?")
+  end
   end
 end

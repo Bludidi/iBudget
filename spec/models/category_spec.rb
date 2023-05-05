@@ -9,13 +9,13 @@ RSpec.describe Category, type: :model do
   before { subject.save }
 
   it 'name should be present' do
-    subject.name = 'Food'
-    expect(subject).to be_valid
+    subject.name = nil
+    expect(subject).to_not be_valid
   end
 
   it 'icon should be present' do
     subject.icon = nil
-    expect(subject).to be_valid
+    expect(subject).to_not be_valid
   end
 
   it 'user_id should be present' do
