@@ -1,6 +1,6 @@
 databases:
   - name: buntu
-    databaseName:buntu
+    databaseName: buntu
     user: buntu_user
 
 services:
