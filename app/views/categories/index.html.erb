@@ -14,7 +14,9 @@
   <% @categories.each do |category| %>
     <div class="categories-each">
     <% if category.icon.attached? %>
-      <img src="<%= (url_for(category.icon)) %>", alt="shopping_image", style="width:60px; height:60px;">
+      <div class="icon">
+        <img src="<%= (url_for(category.icon)) %>", alt="shopping_image", style="widt:60p; heigh:60p;", class="icon-image">
+      </div>
       <span class="category-name"><%= link_to category.name.upcase, category_items_path(category.id) %></span>
     
       <div>
