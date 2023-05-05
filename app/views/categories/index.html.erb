@@ -5,9 +5,11 @@
     <%#= f.submit "SAVE", class: 'login-btn' %>
   </div>
   <h2 class="nav-head category-head">CATEGORIES</h2>
-  <div class="actions login-btn">
-      <%#= f.submit "SAVE", class: 'login-btn' %>
-  </div>
+  <div class="actions login-link">
+      <% if user_signed_in? %>
+        <%= button_to 'EXIT', destroy_user_session_path, method: :delete, class: "login-btn" %>
+      <% end %>
+    </div>
 </div> 
 
 <div class="categories-div">
