@@ -5,6 +5,8 @@ class CategoriesController < ApplicationController
   def index
     @categories = @user.categories
     @item_categories = ItemCategory.all
+    #@category = Category.find(params[:id])
+    #@icon_path = @category.icon.url
   end
 
   # GET /categories/1 or /categories/1.json

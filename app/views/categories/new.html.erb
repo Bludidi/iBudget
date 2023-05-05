@@ -5,7 +5,7 @@
   <h2 class="nav-head">ADD CATEGORY</h2>
 </div>
 
-<%= form_with model: @category, url: categories_path do |f| %>
+<%= form_with model: @category, url: categories_path, local: true do |f| %>
 <div>
   <%= f.text_field :name, placeholder: 'Category name', class: 'input' %>
 </div>
