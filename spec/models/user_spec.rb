@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { User.create(name: 'Parchie', email: 'parchie@pmail.com', password: '123456')}
-  
+  subject { User.create(name: 'Parchie', email: 'parchie@pmail.com', password: '123456') }
+
   before { subject.save }
 
   it 'name should be present' do
@@ -16,7 +16,7 @@ RSpec.describe User, type: :model do
   end
 
   it 'password should be present' do
-    #subject.password = nil
+    # subject.password = nil
     expect(subject).to_not be_nil
   end
 end
