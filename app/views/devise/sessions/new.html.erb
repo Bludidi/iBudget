@@ -1,6 +1,5 @@
-
-
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
   <div class="nav">
     <div class="actions login-link">
       <%= link_to "Back", '/', method: :get, class: 'login-link' %>

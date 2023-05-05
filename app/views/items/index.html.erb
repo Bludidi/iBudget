@@ -1,14 +1,24 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Items</h1>
-
-<div id="items">
-  <% @items.each do |item| %>
-    <%= render item %>
-    <p>
-      <%= link_to "Show this item", item %>
-    </p>
-  <% end %>
+<div class="nav">
+  <div class="actions login-link">
+    <%= link_to "Back", '/', method: :get, class: 'login-link' %>
+  </div>
+  <h2 class="nav-head">TRANSACTIONS</h2>
+  <div class="actions login-btn">
+      <%#= f.submit "SAVE", class: 'login-btn' %>
+    </div>
 </div>
 
-<%= link_to "New item", new_item_path %>
+
+  <div class="total-div"><%= @categories.name.upcase %>  TOTAL AMOUNT: <span class="total"><strong>$<%= @total %>0</strong></span></div>
+
+
+<% @items.each do |item| %>
+<div class="items">
+  <p><%= item.item.name %><span class="total">$<%= item.item.amount %>0<span/></p>
+</div>
+    <% end %>
+</div>
+<%= button_to "ADD TRANSACTION", new_category_item_path(params[:category_id]), method: :get, class: "btn cat-btn" %>
+
+
+

@@ -1,9 +1,26 @@
-<h1>New item</h1>
+<div class="nav">
+  <div class="actions login-link">
+    <%= link_to "Back", category_items_path, method: :get, class: 'login-link' %>
+  </div>
+  <h2 class="nav-head">ADD ITEM</h2>
+  <div class="actions login-btn">
+      <%#= f.submit "SAVE", class: 'login-btn' %>
+    </div>
+</div>
 
-<%= render "form", item: @item %>
-
-<br>
+<%= form_with model: @item, url: category_items_path do |f| %>
+  <p></p><%= @category.name%> category:</p>
+<div>
+  <%= f.text_field :name, placeholder: 'Item name', class: 'input' %>
+</div>
+<div>
+  <%= f.number_field :amount, step: '0.01', placeholder: 'Amount', class: 'input' %>
+</div>
+  <%#= f.collection_select :category_id, Category.where(user_id: current_user.id), :id, :name, { prompt: "Select category" } %>
 
 <div>
-  <%= link_to "Back to items", items_path %>
+  <%= f.submit "SAVE",  class: 'btn cat-btn' %>
 </div>
+
+<% end %>
+
