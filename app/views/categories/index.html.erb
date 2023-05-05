@@ -1,18 +1,19 @@
 <p style="color: green"><%= notice %></p>
 
 <div class="nav category-head">
+  <div class="actions login-btn">
+    <%#= f.submit "SAVE", class: 'login-btn' %>
+  </div>
   <h2 class="nav-head category-head">CATEGORIES</h2>
-  <%# <div class="actions login-link"> %>
-    <%# if user_signed_in? %>
-      <%#= link_to "LOGOUT", destroy_user_session_path(), :method => :delete, class: 'login-link' %>
-    <%# end %>
+  <div class="actions login-btn">
+      <%#= f.submit "SAVE", class: 'login-btn' %>
+  </div>
 </div> 
 
 <div class="categories-div">
   <% @categories.each do |category| %>
     <div class="categories-each">
       <img src="<%= category.icon %>", alt="shopping_image">
-      <%#= category.icon %>
       <span class="category-name"><%= link_to category.name.upcase, category_items_path(category.id) %></span>
     
       <div>
