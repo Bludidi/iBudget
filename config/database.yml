@@ -85,6 +85,4 @@ test:
 #
 production:
   <<: *default
-  database: iBudget_production
-  username: iBudget
-  password: <%= ENV["IBUDGET_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
