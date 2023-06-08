@@ -28,7 +28,7 @@
               <% total += expense.item.amount %>
            <% end %>
            <% end %>
-            <span class="category-amount">$<%= total %>0</span> 
+            <span class="category-amount">$<%= sprintf('%.2f', total) %></span> 
         <% end %>
       </div>
     
