@@ -14,6 +14,7 @@
 
 <% @items.each do |item| %>
 <div class="items">
+  <%= button_to '', category_item_path(item.category, item), method: :delete, class: 'trash-icon', data: { confirm: 'Are you sure you want to delete this item?' } %>
   <p><%= item.item.name %><span class="total">$<%= sprintf('%.2f', item.item.amount) %><span/></p>
 </div>
     <% end %>

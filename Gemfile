@@ -80,3 +80,4 @@ gem 'figaro'
 
 gem 'cancancan'
 gem 'devise'
+gem 'font-awesome-rails'

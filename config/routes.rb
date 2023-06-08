@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   end
 
   resources :categories, only: %i[index new create] do
-    resources :items, only: %i[index new create] do
-      resources :item_categories, only: %i[create]
+    resources :items, only: %i[index new create destroy] do
+      resources :item_categories, only: %i[create destroy]
     end
   end
 end
