@@ -2,13 +2,12 @@
   background-color: rgba(230, 229, 229, 0.548);
   padding: 1em;
 
-  /* width: 95%; */
   margin: auto;
   color: #434b54;
 }
 
 .total {
-  float: right;
+ float: right;
 }
 
 .items {
@@ -17,4 +16,34 @@
   width: 90%;
   margin: 1em auto;
   box-shadow: 0 0 7px 1px rgba(46, 46, 48, 0.61);
+}
+
+.item {
+  color: #434b54;
+  padding: 0.1em 1em;
+  width: 90%;
+  height: fit-content;
+  margin: 1em auto;
+}
+
+.delete-btn {
+  height: 30px;
+  width: 8em;
+  margin: 1em auto 0 3em;
+  background-color: #fff;
+  color: #ff0000;
+  border: 1px solid #ff0000;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+}
+
+.delete-btn:hover {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.flex {
+  display: flex;
+  flex-direction:row
 }

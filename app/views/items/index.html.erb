@@ -2,10 +2,10 @@
   <div class="actions login-link">
     <%= link_to "Back", '/', method: :get, class: 'login-link' %>
   </div>
-  <h2 class="nav-head">TRANSACTIONS</h2>
+    <h2 class="nav-head">TRANSACTIONS</h2>
   <div class="actions login-btn">
       <%#= f.submit "SAVE", class: 'login-btn' %>
-    </div>
+  </div>
 </div>
 
 
@@ -13,12 +13,14 @@
 
 
 <% @items.each do |item| %>
+
 <div class="items">
-  <%= button_to '', category_item_path(item.category, item), method: :delete, class: 'trash-icon', data: { confirm: 'Are you sure you want to delete this item?' } %>
-  <p><%= item.item.name %><span class="total">$<%= sprintf('%.2f', item.item.amount) %><span/></p>
+<div class="flex">
+  <p  class="item"><%= item.item.name %><span class="total">$<%= sprintf('%.2f', item.item.amount) %><span/><%= button_to "Delete #{item.item.name}", category_item_path(item.category, item), method: :delete, class: 'delete-btn' %></p>
 </div>
-    <% end %>
 </div>
+<% end %>
+
 <%= button_to "ADD ITEM", new_category_item_path(params[:category_id]), method: :get, class: "btn cat-btn" %>
 
 

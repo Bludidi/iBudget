@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ @import "font-awesome";
+
 * {
   box-sizing: border-box;
   text-decoration: none;
@@ -120,11 +122,3 @@ html {
   text-align: center;
 }
 
-.trash-icon {
-  color: red; /* Set the desired color for the trash can icon */
-}
-
-.trash-icon::before {
-  font-family: 'Font Awesome';
-  content: "\f2ed"; /* The Unicode value for the trash can icon */
-}
