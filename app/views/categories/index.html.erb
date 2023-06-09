@@ -31,7 +31,9 @@
             <span class="category-amount">$<%= sprintf('%.2f', total) %></span> 
         <% end %>
       </div>
-    
+      <div>
+        <%= button_to "Delete #{category.name}", category_path(category), method: :delete, class: 'delete-btn' %>
+      </div>
     </div>
     <% end %>
 </div>
