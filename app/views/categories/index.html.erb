@@ -7,10 +7,12 @@
   <h2 class="nav-head category-head">CATEGORIES</h2>
   <div class="actions login-link">
       <% if user_signed_in? %>
-        <%= button_to 'EXIT', destroy_user_session_path, method: :delete, class: "login-btn" %>
+        <%= button_to 'LOGOUT', destroy_user_session_path, method: :delete, class: "login-btn" %>
       <% end %>
     </div>
 </div> 
+
+<div class="total-div">  TOTAL BUDGET: <span class="total"><strong>$<%= sprintf('%.2f', @total) %></strong></span></div>
 
 <div class="categories-div">
   <% @categories.each do |category| %>
