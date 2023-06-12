@@ -2,23 +2,26 @@
   <div class="actions login-link">
     <%= link_to "Back", '/', method: :get, class: 'login-link' %>
   </div>
-  <h2 class="nav-head">TRANSACTIONS</h2>
+    <h2 class="nav-head">ITEMS</h2>
   <div class="actions login-btn">
       <%#= f.submit "SAVE", class: 'login-btn' %>
-    </div>
+  </div>
 </div>
 
 
-  <div class="total-div"><%= @categories.name.upcase %>  TOTAL AMOUNT: <span class="total"><strong>$<%= @total %>0</strong></span></div>
+  <div class="total-div"><%= @categories.name.upcase %>  TOTAL AMOUNT: <span class="total"><strong>$<%= sprintf('%.2f', @total) %></strong></span></div>
 
 
 <% @items.each do |item| %>
+
 <div class="items">
-  <p><%= item.item.name %><span class="total">$<%= item.item.amount %>0<span/></p>
+<div class="flex">
+  <p  class="item"><%= item.item.name %><span class="total">$<%= sprintf('%.2f', item.item.amount) %><span/><%= button_to "Delete #{item.item.name}", category_item_path(item.category, item), method: :delete, class: 'delete-btn' %></p>
 </div>
-    <% end %>
 </div>
-<%= button_to "ADD TRANSACTION", new_category_item_path(params[:category_id]), method: :get, class: "btn cat-btn" %>
+<% end %>
+
+<%= button_to "ADD ITEM", new_category_item_path(params[:category_id]), method: :get, class: "btn cat-btn" %>
 
 
 

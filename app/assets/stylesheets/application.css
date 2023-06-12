@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ @import "font-awesome";
+
 * {
   box-sizing: border-box;
   text-decoration: none;
@@ -119,3 +121,4 @@ html {
 .shared-links {
   text-align: center;
 }
+

@@ -1,3 +1,7 @@
+<a name="readme-top"></a>
+
+<!-- TABLE OF CONTENTS -->
+
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
@@ -10,60 +14,54 @@
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
-  - [Run tests](#run-tests)
+  - [Run tests](#tests)
   - [Deployment](#deployment)
+  - [Video presentation](#video-presentation)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [iBudget] <a name="about-project"></a>
+# 📖 iBudget <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
+ **iBudget** With this App, one can manage budget: A list of transactions is there which associated with a category, so that one can see how much money to be spent for a particular choice.  A user is allowed to:  register and log in, so that the data is private to them. New category and new transaction can be created also.
 
-**[iBudget]** is a...
 
 ## 🛠 Built With <a name="built-with"></a>
 
-### Tech Stack <a name="tech-stack"></a>
+Ruby on rails
+Postgres
+HTML
+CSS
+Github
+Bootstrap
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
+### Tech Stack <a name="tech-stack"></a>
 
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
-  </ul>
-</details>
-
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
+    <li><a href="https://www.ruby-lang.org/en/">Ruby on rails</a></li>
   </ul>
 </details>
 
 <details>
 <summary>Database</summary>
   <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+    <li><a href="https://www.postgresql.org/">postgres</a></li>
   </ul>
 </details>
 
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
+- Ruby on Rails
+- PostgreSQL Database
 
-> Describe between 1-3 key features of the application.
-
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -71,9 +69,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
-
-- [Live Demo Link](https://google.com)
+> https://budgetapp-3wop.onrender.com/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -81,91 +77,100 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
+> To start and run this project
+
+https://github.com/Bludidi/iBudget.git
+```
+bundle install
+```
 
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need:
+- Visual Studio Code.
+- Git Flow.
+- PostgreSQL
 
-<!--
-Example command:
 
-```sh
- gem install rails
+### Install & Setup
+
+To setup and install this sample ROR Blog project, follow the below steps:
+- Clone this project by the command: 
+
 ```
- -->
-
-### Setup
-
-Clone this repository to your desired folder:
-
-<!--
-Example commands:
-
-```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+$ git clone https://github.com/Bludidi/iBudget.git
 ```
---->
 
-### Install
+- Then switch to the project folder by the bellow query:
 
-Install this project with:
-
-<!--
-Example command:
-
-```sh
-  cd my-project
-  gem install
 ```
---->
-
-### Usage
-
-To run the project, execute the following command:
-
-<!--
-Example command:
-
-```sh
-  rails server
+$ cd iBudget
 ```
---->
 
-### Run tests
 
-To run tests, run the following command:
-
-<!--
-Example command:
-
-```sh
-  bin/rails test test/models/article_test.rb
+- Install the required dependecies with  
 ```
---->
+bundle install
+```
+- Install npm dependencies with 
+```
+npm install
+```
+- **Before running below commands update [config/database.yml](./config/database.yml) with your local `DB`credentials. Then run:**
+```
+rails db:create
+```
+```
+rails db:migrate
+
+```
+     
+- With Ruby on Rails and PostgreSQL installed in your environment, you can run 
+```.rb
+rails server
+``` 
+to run the website.
+
+### Tests
+
+- Run 
+```
+rspec 
+
+```
+
+- Install the required dependecies with `bundle install`
+- Install npm dependencies with `npm install`
+- **Before running below commands update [config/database.yml](./config/database.yml) with your local `DB`credentials. Then run:**
+      - **`rails db:create`**
+      - **`rails db:migrate`**
+     
+- With Ruby on Rails and PostgreSQL installed in your environment, you can run `rails server` to run the website.
+
+### Tests
+# Tests <a name="tests"></a>
+- Run `rails db:seed RAILS_ENV=test` to seed the testing database
+- Run `rspec`
+
 
 ### Deployment
+# Deployment <a name="deployment"></a>
+- I deployed the project with [render], The link for failed the deployment is attached :
+ https://budgetapp-3wop.onrender.com/
 
-You can deploy this project using:
 
-<!--
-Example:
-
-```sh
-
-```
- -->
+### Video Presentation
+# Video Presentation <a name="video-presentation"></a>
+- I made a loom video presentation . 
+The link is : https://www.loom.com/share/e4c7a5220ea6466c8a1fc443abecb6dc
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
-
-> Mention all of the collaborators of this project.
 
 ![my profile](https://avatars.githubusercontent.com/u/86472119?s=40&v=4) **Brian Buntu Ludidi**
 
@@ -186,11 +191,8 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
-
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] **More new pages**
+- [ ] **Proper Deployment**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -208,23 +210,17 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project...
-
+> If you like this project give it a ⭐️
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank...
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
+- I would like to thank Microverse for these [Design Guidelines](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
+- Original design idea by [Gregoire Vella on Behance.](https://www.behance.net/gregoirevella)
+- Hat tip to anyone whose code was used 🤝
+- Inspiration 🔥
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -233,7 +229,5 @@ I would like to thank...
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./MIT.md) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
